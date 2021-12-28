@@ -15,5 +15,5 @@ while n >= 0:
         n -= 2
         count += 1
 
-if n <= 0:
+if n < 0:
     print(-1)
