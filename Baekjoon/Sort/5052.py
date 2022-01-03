@@ -8,11 +8,10 @@ input = sys.stdin.readline
 
 def consist_number(n, numbers):
     numbers.sort()
-    print(numbers)
     for i in range(n-1):
         if numbers[i+1].startswith(numbers[i]):
-            return 'No'
-    return 'Yes'
+            return 'NO'
+    return 'YES'
 
 
 t = int(input())

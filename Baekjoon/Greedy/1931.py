@@ -8,6 +8,7 @@ input = sys.stdin.readline
 
 N = int(input())
 time = [list(map(int, input().split())) for i in range(N)]
+time.sort(key = lambda x: x[0])
 time.sort(key = lambda x : x[1])
 
 end, count = 0, 0

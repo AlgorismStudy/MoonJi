@@ -28,9 +28,9 @@ def main():
 
 def DFS(graph, v, visited):
     visited.append(v)
-    for i in range(len(graph[v])):
-        if graph[v][i] not in visited:
-            DFS(graph, graph[v][i], visited)
+    for i in graph[v]:
+        if i not in visited:
+            DFS(graph, i, visited)
 
 def BFS(graph, v, visited):
     d = deque()
@@ -38,9 +38,9 @@ def BFS(graph, v, visited):
     visited.append(v)
     while d:
         cur = d.popleft()
-        for i in range(len(graph[cur])):
-            if graph[cur][i] not in visited:
-                d.append(graph[cur][i])
-                visited.append(graph[cur][i])
+        for i in graph[cur]:
+            if i not in visited:
+                d.append(i)
+                visited.append(i)
 
 main()
