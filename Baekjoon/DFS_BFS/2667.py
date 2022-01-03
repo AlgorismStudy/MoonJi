@@ -22,6 +22,7 @@ def main():
                 cur += 1
 
     print(len(l))
+    l.sort()
     for i in l:
         print(i)
 
