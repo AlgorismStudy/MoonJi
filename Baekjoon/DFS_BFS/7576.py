@@ -27,7 +27,6 @@ while d:
                 tomato[nx][ny] = tomato[x][y] + 1
                 d.append([nx, ny])
 
-print(tomato, d)
 if all(0 not in t for t in tomato):
     print(max(map(max, tomato)) - 1)
 else:
