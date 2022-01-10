@@ -6,11 +6,13 @@
 import collections
 import sys
 input = sys.stdin.readline
+
 N = int(input())
 n_dict = collections.defaultdict(int)
 
 for _ in range(N):
     number = int(input())
     n_dict[number] += 1
+    
 max_values = max(n_dict.values())
 print(min([k for k, v in n_dict.items() if max_values == v]))
