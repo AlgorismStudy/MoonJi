@@ -11,6 +11,7 @@ input = sys.stdin.readline
 N, C = map(int, input().split())
 house = [int(input()) for _ in range(N)]
 house.sort()
+
 start, end = 0, max(house)
 max_d = 0
 while start <= end:

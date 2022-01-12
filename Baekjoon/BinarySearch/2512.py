@@ -10,7 +10,7 @@ N = int(input())
 request = list(map(int, input().split()))
 target = int(input())
 
-start, end = 0, max(request)
+start, end = 1, max(request)
 answer = 0
 while start <= end:
     mid = (start + end) // 2
@@ -21,4 +21,4 @@ while start <= end:
     elif total > target:
         end = mid - 1
     
-print(start - 1)
+print(end)
