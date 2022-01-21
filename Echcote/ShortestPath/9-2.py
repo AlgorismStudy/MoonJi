@@ -24,8 +24,6 @@ def dijkstra(start):
     # 시작 노드로 가기 위한 최단 경로는 0으로 설정하여, 큐에 삽입
     heapq.heappush(q, (0, start))
     distance[start] = 0
-    for j in graph[start]:
-        distance[j[0]] = j[1]
     # 시작 노드를 제외한 전체 n-1개의 노드에 대해 반복
     while q:
         # 가장 최단 거리가 짧은 노드
