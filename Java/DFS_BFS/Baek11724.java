@@ -12,7 +12,7 @@ public class Baek11724 {
     static boolean[] visit;
     static int count;
     public static void bfs(int i) {
-        Queue<Integer> q = new LinkedList<Integer>();
+        Queue<Integer> q = new LinkedList<>();
         q.offer(i);
         visit[i] = true;
 
@@ -50,11 +50,9 @@ public class Baek11724 {
         }
 
         count = 0;
-
         for(int i=1; i < N + 1; i++) {
             if (visit[i] == false) bfs(i);
         }
-
         System.out.print(count);
     }
 }
