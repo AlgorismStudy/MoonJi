@@ -8,7 +8,7 @@ public class Main1072 {
         String[] s = br.readLine().split(" ");
         long X = Integer.parseInt(s[0]);
         long Y = Integer.parseInt(s[1]);
-        long Z = Y * 100 / X ;
+        long Z = Y * 100 / X;
 
         long start = 1;
         long end = X;
