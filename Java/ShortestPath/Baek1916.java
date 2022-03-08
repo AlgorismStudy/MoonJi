@@ -10,7 +10,7 @@ public class Baek1916 {
     static int N;
     static int[] dist;
     static ArrayList<node>[] graph;
-
+    static boolean[] visited;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -19,6 +19,7 @@ public class Baek1916 {
         int M = Integer.parseInt(br.readLine());
         graph = new ArrayList[N+1];
         dist = new int[N+1];
+        visited = new boolean[N+1];
 
         Arrays.fill(dist, Integer.MAX_VALUE);
 
@@ -49,6 +50,9 @@ public class Baek1916 {
 
         while(!pq.isEmpty()) {
             node cur = pq.poll();
+
+            if(visited[cur.n]) continue;
+            visited[cur.n] = true;
 
             for(node next: graph[cur.n]) {
                 if(dist[cur.n] + next.w < dist[next.n]) {
