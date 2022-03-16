@@ -1,3 +1,5 @@
+'''연산자 끼워넣기'''
+
 from itertools import permutations
 import sys
 input = sys.stdin.readline

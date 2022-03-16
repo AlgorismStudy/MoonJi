@@ -1,3 +1,5 @@
+'''스타트와 링크'''
+
 from itertools import combinations
 import sys
 input = sys.stdin.readline
@@ -19,7 +21,7 @@ for i in range(len(com)):
     for j in team2:
         for k in team2:
             s_2 += S[j][k]
-            
+
     if abs(s_1 - s_2) < result:
         result = abs(s_1 - s_2)
 
