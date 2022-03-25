@@ -9,7 +9,7 @@ blank = []
 def dfs(depth):
     if depth == len(blank):
         for i in range(9):
-            print(*maps[i], sep=" ")
+            print(*maps[i])
         sys.exit()
 
     x, y = blank[depth]

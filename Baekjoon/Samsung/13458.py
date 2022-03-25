@@ -4,9 +4,8 @@ N = int(input())
 A = list(map(int, input().split()))
 B, C = map(int, input().split())
 
-result = 0
 A = [n - B for n in A]
-result += N
+result = N
 
 for a in A:
     if a > 0:

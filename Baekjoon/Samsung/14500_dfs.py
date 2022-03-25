@@ -19,7 +19,7 @@ def dfs(x, y, depth, total):
             nx = x + dx[i]
             ny = y + dy[i]
 
-            if 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == False:
+            if 0 <= nx < N and 0 <= ny < M and not visited[nx][ny]:
                 if depth == 1:
                     visited[nx][ny] = True
                     dfs(x, y, depth + 1, total + maps[nx][ny])
