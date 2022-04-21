@@ -41,6 +41,6 @@ for box in tomato:
             sys.exit()
         result = max(result, max(line))
 
-print(result)
+print(result-1)
 
 

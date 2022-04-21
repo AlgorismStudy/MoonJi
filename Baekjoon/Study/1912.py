@@ -1,6 +1,5 @@
 '''연속합'''
 
-from re import L
 import sys
 input = sys.stdin.readline
 
