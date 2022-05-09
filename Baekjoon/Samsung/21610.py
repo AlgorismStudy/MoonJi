@@ -19,9 +19,13 @@ cloud = [[N-1, 0], [N-1, 1], [N-2, 0], [N-2, 1]]
 visited = [[0] * N for _ in range(N)]
 
 def move_cloud(d, s):
+    global cloud
     for i in range(len(cloud)):
         cloud[i][0] = (cloud[i][0] + dx[d] * s) % N
         cloud[i][1] = (cloud[i][1] + dy[d] * s) % N
+        A[cloud[i][0]][cloud[i][1]] += 1
+        visited[cloud[i][0]][cloud[i][1]] = 1
+    cloud = []
         
 def rain_cloud():
     global cloud
@@ -54,7 +58,7 @@ def make_cloud():
 
 for i in range(M):
     move_cloud(d[i], s[i])
-    rain_cloud()
+    # rain_cloud()
     water_copy_bug()
     make_cloud()
 
