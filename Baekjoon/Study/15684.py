@@ -25,11 +25,9 @@ def is_same():
 
 def add_ladder(depth, x, y):
     global result
-    if depth > 3:
-        return
     if is_same():
         result = min(result, depth)
-    if depth == 3:
+    if depth == 3 or result <= depth:
         return
 
     for i in range(x, H):

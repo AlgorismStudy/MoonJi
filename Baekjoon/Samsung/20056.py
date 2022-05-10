@@ -8,7 +8,7 @@ fireball = {}
 for i in range(M):
     r, c, m, s, d = map(int, input().split())
     fireball[(r, c)] = [(m, s, d)]
-visited = [[0] * N for _  in range(N)]
+# visited = [[0] * N for _  in range(N)]
 
 dx = [-1, -1, 0, 1, 1, 1, 0, -1]
 dy = [0, 1, 1, 1, 0, -1, -1, -1]
