@@ -30,7 +30,7 @@ def bfs(h, i, j):
                 q.append([nx, ny])
                 visited[nx][ny] = 1
 
-result = 0
+result = 1
 
 for h in range(min_h, max_h):
     visited = [[0] * N for _ in range(N)]
