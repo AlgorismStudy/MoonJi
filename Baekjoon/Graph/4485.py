@@ -1,7 +1,6 @@
 '''녹색 옷 입은 애가 젤다지?'''
 
 from collections import deque
-import re
 import sys
 input = sys.stdin.readline
 
@@ -33,5 +32,6 @@ while True:
                 if result[nx][ny] > result[x][y] + graph[nx][ny]:
                     result[nx][ny] = result[x][y] + graph[nx][ny]
                     dq.append([nx, ny])
-    print("Problem " + str(index) + ": ", result[N-1][N-1])
+                    
+    print("Problem " + str(index) + ":", result[N-1][N-1])
     index += 1
