@@ -13,7 +13,8 @@ def solution(id_list, report, k):
     for key, value in d.items():
         if len(value) >= k:
             for v in value:
-                mail[v] += 1           
+                mail[v] += 1       
+                    
     for id in id_list:
         if mail[id] > 0:
             answer.append(mail[id])
