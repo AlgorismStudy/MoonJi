@@ -9,7 +9,7 @@ def solution(n, k):
         k_num = str(tmp) + k_num
     
     nums = k_num.split("0")
-    print(nums)
+
     for num in nums:
         if len(num) > 0:
             num = int(num)

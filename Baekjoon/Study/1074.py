@@ -20,6 +20,6 @@ def visit(s, n, x, y):
         nx = x + dx[i] * (2 ** n)
         ny = y + dy[i] * (2 ** n)
         if nx <= r < nx + (2 ** n) and ny <= c < ny + (2 ** n):
-            visit(s + i * (2 ** (2 * n)), n, x + dx[i] * (2 ** n), y + dy[i] * (2 ** n))
+            visit(s + i * (2 ** (2 * n)), n, nx, ny)
 
 visit(0, N, 0, 0)
