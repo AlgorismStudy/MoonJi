@@ -1,3 +1,7 @@
+'''양궁 대회'''
+
+from copy import deepcopy
+
 def cal_score(info1, info2):
     apeach, lion = 0, 0
     for i in range(11):
@@ -5,30 +9,36 @@ def cal_score(info1, info2):
             apeach += 10 - i
         else:
             lion += 10 - i
-    if apeach >= lion:
-        return False
-    else:
-        return True
+    return lion - apeach
 
-def bfs(n, depth, answer, info):
-    if depth == 11:
-        if cal_score(info, answer):
-            print(answer)
-            exit()
-        return
-    
-    for i in range(n):
-        answer[depth] = i
-        bfs(n, depth + 1, answer, info)
-        answer[depth] = 0
-    
 def solution(n, info):
-    answer = [0] * 11
+
+    def bfs(n, depth):
+        global max_score, answer, result
+        if depth == 11:
+            if n != 0:  answer[10] = n
+            score = cal_score(info, answer)
+            if score > max_score:
+                max_score = score
+                result = deepcopy(answer)
+                return
+            return
+        
+        if info[depth] < n:
+            answer[depth] = info[depth] + 1
+            bfs(n - info[depth] - 1, depth + 1)
+            answer[depth] = 0
+        
+        bfs(n, depth + 1)
+
+    global max_score, answer, result
     
-    bfs(n, 0, answer, info)
+    answer = [0] * 11
+    max_score = 0
+    bfs(n, 0)
             
-    return answer
+    return result
 
 n = 5
 info = 	[2,1,1,1,0,0,0,0,0,0,0]
-solution(n, info)
+print(solution(n, info))
