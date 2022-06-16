@@ -17,15 +17,11 @@ def solution(enroll, referral, seller, amount):
             cur = q.pop()
             parent = dict_enr[cur]
             
-            if price * 0.1 < 1:
-                answer[cur] += price
-                price = 0
-            else:
-                answer[cur] += price - int(price * 0.1)
-                price = int(price * 0.1)
+            answer[cur] += price - int(price * 0.1)
+            price = int(price * 0.1)
             
-            if parent != "-":
-                q.append(parent)    
+            if parent != "-" and price != 0:
+                q.append(parent)   
     
     result = list(answer.values())
     
