@@ -1,33 +1,21 @@
-from collections import deque
-
-def find_min_fare(start, fare):
-    answer = [987654321 for _ in range(n+1)]
-    answer[start] = 0
-
-    q = deque()
-    q.append(start)
-    
-    while q:
-        cur = q.popleft()
-        for i in range(1, len(fare[cur])):
-            if answer[i] > fare[start][cur] + fare[cur][i]:
-                answer[i] = fare[start][cur] + fare[cur][i]
-                q.append(i)
-    return answer
-
-
 def solution(n, s, a, b, fares):
-    fare = [[987654321] * (n+1) for _ in range(n+1)]
-    for i in range(1, 7):
-        fare[i][i] = 0
+    fee = [[987654321] * (n+1) for _ in range(n+1)]
+    for i in range(1, n+1):
+        fee[i][i] = 0
     
-    for f in fares:
-        c, d, f = f
-        fare[c][d] = f
-        fare[d][c] = f
+    for c, d, f in fares:
+        fee[c][d] = f
+        fee[d][c] = f
 
-    s_answer = find_min_fare(s, fare)
+    for r in range(1, n+1):
+        for start in range(1, n+1):
+            for end in range(1, n+1):
+                fee[start][end] = min(fee[start][end], fee[start][r] + fee[r][end])
     
+    answer = 987654321
+    for i in range(1, n+1):
+        answer = min(answer, fee[s][i] + fee[i][a] + fee[i][b])
+
     return answer
 
 
